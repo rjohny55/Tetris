@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #1a1a1a;
+  font-family: Arial, sans-serif;
+  touch-action: none;
+}
+
+#gameContainer {
+  position: relative;
+  text-align: center;
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+#startButton {
+  margin: 20px auto;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  background: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+}
+
+#controls {
+  position: absolute;
+  width: 100%;
+  bottom: -80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#controls button {
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#controls button:hover {
+  background: #0056b3;
+}
+
+canvas {
+  border: 2px solid #4a4a4a;
+  background: #000;
+  display: block;
+}
+
+#scoreBoard {
+  margin-top: 15px;
+  color: white;
+  font-size: 1.2em;
+}
+
+#gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  display: none;
+}
+
+#restartButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
