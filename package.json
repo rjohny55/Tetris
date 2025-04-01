@@ -1,0 +1,32 @@
+{
+  "name": "tetris-ts-vercel",
+  "version": "1.0.0",
+  "description": "Игра Тетрис на TypeScript с Canvas, управлением с клавиатуры и свайпами, для Vercel",
+  "main": "public/dist/main.js",  "type": "module", // Важно для использования ES6 модулей в Node.js (если понадобится) и для некоторых инструментов
+  "scripts": {
+    "build": "tsc", // Команда для компиляции TypeScript
+    "start": "serve public", // Простой скрипт для локального запуска (требует npm install -g serve или npx serve public)
+    "dev": "tsc --watch", // Опционально: для компиляции в реальном времени при изменениях
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tetris",
+    "typescript",
+    "canvas",
+    "game",
+    "vercel"
+  ],
+  "author": "Ваше Имя или Никнейм", // Замените на свое имя/ник
+  "license": "MIT", // Вы можете выбрать другую лицензию
+  "devDependencies": {
+    "typescript": "^5.0.0", // Используйте актуальную версию TypeScript
+    "serve": "^14.0.0" // Для скрипта 'start' - можно удалить, если не нужен
+    // Можно добавить @types/node, если используете Node.js API в коде/скриптах
+    // "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+     // В текущей реализации нет прямых runtime зависимостей Node.js,
+     // так как вся логика выполняется в браузере после компиляции.
+     // Этот раздел может остаться пустым.
+  }
+}
