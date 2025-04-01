@@ -1,17 +1,17 @@
 // tsconfig.json
 {
   "compilerOptions": {
-    "target": "ES6", // Целевая версия JS
-    "module": "ES6", // Система модулей
-    "outDir": "./public/dist", // Куда компилировать JS
-    "rootDir": "./src", // Корневая папка с TS кодом
-    "strict": true, // Включить строгие проверки типов
-    "esModuleInterop": true, // Улучшенная совместимость с модулями JS
-    "skipLibCheck": true, // Пропускать проверку типов в библиотеках
+    "target": "ES6",
+    "module": "ES6",
+    "outDir": "./public/dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node" // Как искать модули
-    "lib": ["ES2016", "DOM", "DOM.Iterable"] // ES2016 добавит .includes, DOM нужен для браузера
+    "moduleResolution": "node",
+    "lib": ["ES2016", "DOM", "DOM.Iterable"]
   },
-  "include": ["src/**/*"], // Какие файлы компилировать
-  "exclude": ["node_modules"] // Какие папки исключить
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
