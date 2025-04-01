@@ -3,7 +3,7 @@ import {
     COLS, ROWS, BLOCK_SIZE, EMPTY_COLOR, BORDER_COLOR, TETROMINOES,
     TETROMINO_KEYS, STARTING_SPEED, SPEED_INCREMENT, LINES_PER_LEVEL, SCORE_POINTS,
     NEXT_PIECE_AREA_SIZE
-} from './constants';
+} from './constants.js';
 import { Position, Shape, Grid, TetrominoData } from './types';
 
 class Piece {
