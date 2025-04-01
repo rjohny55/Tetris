@@ -5,46 +5,54 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    /* === ИЗМЕНЕНО === */
+    background-color: #000000; /* Черный фон */
+    color: #e0e0e0;            /* Светло-серый текст по умолчанию */
+    /* =============== */
     font-family: sans-serif;
-    /* Отключаем выделение текста для удобства свайпов */
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    /* Предотвращаем "pull-to-refresh" и другие браузерные жесты */
     overscroll-behavior-y: contain;
 }
 
 h1 {
-    color: #333;
+    /* === ИЗМЕНЕНО === */
+    color: #ffffff; /* Белый заголовок */
+    /* =============== */
 }
 
 .game-container {
     display: flex;
-    align-items: flex-start; /* Выравниваем по верху */
-    gap: 20px; /* Отступ между канвасом и информацией */
+    align-items: flex-start;
+    gap: 20px;
     margin-top: 20px;
 }
 
 #tetrisCanvas {
-    border: 3px solid #333;
-    background-color: #e0e0e0;
-    /* Предотвращаем контекстное меню по долгому тапу */
+    /* === ИЗМЕНЕНО: рамка чуть светлее для контраста === */
+    border: 3px solid #555555;
+    /* background-color остается черным из JS */
+    /* ============================================== */
     -webkit-touch-callout: none;
 }
 
 .info {
-    border: 1px solid #ccc;
+    /* Фон info блока остается светлым - это нормально */
+    border: 1px solid #555; /* Рамка чуть темнее на черном фоне */
     padding: 15px;
-    background-color: #fff;
-    min-width: 150px; /* Минимальная ширина блока информации */
+    background-color: #222; /* Темно-серый фон для info блока */
+    color: #e0e0e0;         /* Светлый текст внутри info блока */
+    min-width: 150px;
     text-align: left;
+    border-radius: 5px; /* Небольшое скругление */
 }
 
 .info p {
     margin: 5px 0;
     font-size: 1em;
+    /* color наследуется от .info */
 }
 
 .next-piece {
@@ -53,25 +61,27 @@ h1 {
 }
 
 #nextPieceCanvas {
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
+    /* === ИЗМЕНЕНО: фон области "Далее" темнее === */
+    background-color: #111111; /* Очень темный фон */
+    border: 1px solid #555;   /* Граница */
+    /* ========================================= */
     margin-top: 5px;
 }
 
 /* Медиа-запрос для маленьких экранов */
 @media (max-width: 600px) {
     body {
-        justify-content: flex-start; /* Начинаем с верха */
+        justify-content: flex-start;
         padding-top: 10px;
     }
     .game-container {
-        flex-direction: column; /* Ставим элементы друг под другом */
+        flex-direction: column;
         align-items: center;
     }
     .info {
         margin-top: 15px;
-        width: 90%; /* Шире на мобильных */
-        max-width: 300px; /* Ограничиваем максимальную ширину */
+        width: 90%;
+        max-width: 300px;
         text-align: center;
     }
 }
