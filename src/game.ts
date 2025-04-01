@@ -572,4 +572,5 @@ private drawNextPiece() {
             }
         });
     });
+  }
 }
