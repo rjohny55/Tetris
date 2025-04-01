@@ -1,6 +1,6 @@
 // src/main.ts
-import { Game } from './game';
-import { setupInput } from './input';
+import { Game } from './game.js';
+import { setupInput } from './input.js';
 
 // Получаем элементы DOM после загрузки страницы
 window.addEventListener('DOMContentLoaded', () => {
