@@ -543,7 +543,7 @@ export class Game {
      private drawNextPiece() {
         if (!this.nextPiece) return;
         // Очищаем nextCtx своим фоном (не черным)
-        this.nextCtx.fillStyle = '#e0e0e0'; // Фон области превью
+        this.nextCtx.fillStyle = EMPTY_COLOR; // Фон области превью
         this.nextCtx.fillRect(0, 0, NEXT_PIECE_AREA_SIZE, NEXT_PIECE_AREA_SIZE);
 
         const piece = this.nextPiece;
