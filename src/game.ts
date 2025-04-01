@@ -4,7 +4,7 @@ import {
     TETROMINO_KEYS, STARTING_SPEED, SPEED_INCREMENT, LINES_PER_LEVEL, SCORE_POINTS,
     NEXT_PIECE_AREA_SIZE
 } from './constants.js';
-import { Position, Shape, Grid, TetrominoData } from './types';
+import { Position, Shape, Grid, TetrominoData } from './types.js';
 
 class Piece {
     type: string;
