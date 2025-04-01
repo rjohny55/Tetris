@@ -1,5 +1,5 @@
 // src/constants.ts
-import { TetrominoData } from './types';
+import { TetrominoData } from './types.js';
 
 export const COLS = 10; // Ширина поля в блоках
 export const ROWS = 20; // Высота поля в блоках
