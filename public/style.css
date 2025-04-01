@@ -1,0 +1,77 @@
+/* public/style.css */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    /* Отключаем выделение текста для удобства свайпов */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* Предотвращаем "pull-to-refresh" и другие браузерные жесты */
+    overscroll-behavior-y: contain;
+}
+
+h1 {
+    color: #333;
+}
+
+.game-container {
+    display: flex;
+    align-items: flex-start; /* Выравниваем по верху */
+    gap: 20px; /* Отступ между канвасом и информацией */
+    margin-top: 20px;
+}
+
+#tetrisCanvas {
+    border: 3px solid #333;
+    background-color: #e0e0e0;
+    /* Предотвращаем контекстное меню по долгому тапу */
+    -webkit-touch-callout: none;
+}
+
+.info {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #fff;
+    min-width: 150px; /* Минимальная ширина блока информации */
+    text-align: left;
+}
+
+.info p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.next-piece {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#nextPieceCanvas {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+/* Медиа-запрос для маленьких экранов */
+@media (max-width: 600px) {
+    body {
+        justify-content: flex-start; /* Начинаем с верха */
+        padding-top: 10px;
+    }
+    .game-container {
+        flex-direction: column; /* Ставим элементы друг под другом */
+        align-items: center;
+    }
+    .info {
+        margin-top: 15px;
+        width: 90%; /* Шире на мобильных */
+        max-width: 300px; /* Ограничиваем максимальную ширину */
+        text-align: center;
+    }
+}
