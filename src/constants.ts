@@ -1,13 +1,14 @@
 // src/constants.ts
-import { TetrominoData } from './types.js';
+import { TetrominoData } from './types.js'; // Убедитесь что тут .js
 
 export const COLS = 10; // Ширина поля в блоках
 export const ROWS = 20; // Высота поля в блоках
 export const BLOCK_SIZE = 30; // Размер блока в пикселях
 export const NEXT_PIECE_AREA_SIZE = 4; // Размер области для следующей фигуры в блоках
 
-export const EMPTY_COLOR = '#e0e0e0'; // Цвет пустой ячейки (фон)
-export const BORDER_COLOR = '#cccccc'; // Цвет сетки
+export const EMPTY_COLOR = '#000000'; // <-- ИЗМЕНЕНО НА ЧЕРНЫЙ
+export const GRID_BORDER_COLOR = '#444444'; // Цвет сетки (сделаем темнее)
+export const BORDER_COLOR = '#333'; // Цвет рамки канваса
 
 // Определения фигур Тетрамино (каждая фигура - массив поворотов)
 export const TETROMINOES: { [key: string]: TetrominoData } = {
@@ -23,7 +24,7 @@ export const TETROMINOES: { [key: string]: TetrominoData } = {
     O: {
         shape: [
             [[1, 1], [1, 1]]
-        ], // Квадрат не вращается
+        ],
         color: 'yellow'
     },
     T: {
@@ -92,3 +93,24 @@ export const SCORE_POINTS = {
 export const SWIPE_THRESHOLD = 50; // Минимальное расстояние для регистрации свайпа (в пикселях)
 export const TAP_THRESHOLD_TIME = 200; // Макс время для тапа (мс)
 export const TAP_THRESHOLD_DIST = 10;  // Макс расстояние для тапа (пикс)
+
+// --- НОВОЕ: Константы для визуальных эффектов ---
+export const NUM_STARS = 100; // Количество звезд
+export const STAR_COLOR = 'rgba(255, 255, 255, 0.8)'; // Белые звезды (цвет задается при рисовании с опасити)
+export const STAR_TWINKLE_SPEED = 0.01; // Скорость мерцания
+
+export const NUM_COMETS = 5; // Количество комет
+export const COMET_SPEED_MIN = 2;
+export const COMET_SPEED_MAX = 5;
+export const COMET_LENGTH_MIN = 40;
+export const COMET_LENGTH_MAX = 80;
+export const COMET_WIDTH = 2;
+export const COMET_COLORS = ['#FFFFE0', '#ADD8E6', '#FFB6C1']; // Светло-желтый, голубой, розовый
+
+export const NUM_ROCKETS = 3; // Количество ракет
+export const ROCKET_SPEED_MIN = 1;
+export const ROCKET_SPEED_MAX = 3;
+export const ROCKET_SIZE = 10; // Размер основания треугольника
+export const ROCKET_COLOR = '#D3D3D3'; // Светло-серый
+export const ROCKET_FLAME_COLOR = '#FFA500'; // Оранжевый
+// --- КОНЕЦ НОВОГО ---
