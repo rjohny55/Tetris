@@ -17,7 +17,7 @@
     "game",
     "vercel"
   ],
-  "author": "Ваше Имя или Никнейм",
+  "author": "https://github.com/rjohny55/Tetris",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.0.0",
