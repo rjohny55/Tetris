@@ -539,27 +539,38 @@ export class Game {
         ctx.strokeRect(pixelX, pixelY, BLOCK_SIZE, BLOCK_SIZE);
     }
 
-     // Отрисовка следующей фигуры (использует масштабированный nextCtx)
-     private drawNextPiece() {
-        if (!this.nextPiece) return;
-        // Очищаем nextCtx своим фоном (не черным)
-        this.nextCtx.fillStyle = EMPTY_COLOR; // Фон области превью
-        this.nextCtx.fillRect(0, 0, NEXT_PIECE_AREA_SIZE, NEXT_PIECE_AREA_SIZE);
+// Отрисовка следующей фигуры (использует масштабированный nextCtx)
+private drawNextPiece() {
+    if (!this.nextPiece) return;
 
-        const piece = this.nextPiece;
-        const shape = piece.currentShape;
-        const shapeSize = shape.length;
-        const offsetX = (NEXT_PIECE_AREA_SIZE - shapeSize) / 2;
-        const offsetY = (NEXT_PIECE_AREA_SIZE - shapeSize) / 2;
+    // Очищаем nextCtx основным фоновым цветом игры (черным)
+    this.nextCtx.fillStyle = EMPTY_COLOR;
+    this.nextCtx.fillRect(0, 0, NEXT_PIECE_AREA_SIZE, NEXT_PIECE_AREA_SIZE);
 
-        // Рисуем блоки на nextCtx используя его координаты и drawBlock
-        shape.forEach((row, dy) => {
-            row.forEach((value, dx) => {
-                if (value === 1) {
-                     // Передаем координаты сетки превью (не пиксели)
-                    this.drawBlock(this.nextCtx, offsetX + dx, offsetY + dy, piece.data.color);
-                }
-            });
+    const piece = this.nextPiece;
+    const shape = piece.currentShape;
+    const shapeSize = shape.length; // Размер матрицы фигуры (e.g., 2 для O, 3 для T, 4 для I)
+    // Центрируем фигуру в области превью (размером NEXT_PIECE_AREA_SIZE)
+    const offsetX = (NEXT_PIECE_AREA_SIZE - shapeSize) / 2;
+    const offsetY = (NEXT_PIECE_AREA_SIZE - shapeSize) / 2;
+
+    // --- НАЧАЛО ИЗМЕНЕНИЙ: Рисуем прямо на nextCtx ---
+    this.nextCtx.fillStyle = piece.data.color; // Цвет фигуры
+    this.nextCtx.strokeStyle = '#555';         // Цвет границы для превью (чуть светлее)
+    this.nextCtx.lineWidth = 0.05;             // Тонкая линия (т.к. контекст масштабирован)
+
+    shape.forEach((row, dy) => {
+        row.forEach((value, dx) => {
+            if (value === 1) {
+                // Координаты в масштабированной системе nextCtx
+                const drawX = offsetX + dx;
+                const drawY = offsetY + dy;
+
+                // Рисуем квадрат 1x1, который будет растянут масштабированием
+                this.nextCtx.fillRect(drawX, drawY, 1, 1);
+                this.nextCtx.strokeRect(drawX, drawY, 1, 1);
+            }
         });
-    }
-} // --- КОНЕЦ КЛАССА GAME ---
+    });
+    // --- КОНЕЦ ИЗМЕНЕНИЙ ---
+}
