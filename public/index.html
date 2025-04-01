@@ -1,0 +1,30 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Тетрис на TypeScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Тетрис</h1>
+    <div class="game-container">
+        <canvas id="tetrisCanvas"></canvas>
+        <div class="info">
+            <p>Счет: <span id="score">0</span></p>
+            <p>Уровень: <span id="level">1</span></p>
+            <div class="next-piece">
+                <p>Далее:</p>
+                <canvas id="nextPieceCanvas" width="120" height="120"></canvas>
+            </div>
+             <p>Управление:</p>
+             <p>← → ↓: Движение</p>
+             <p>↑ / Пробел: Поворот</p>
+             <p>Свайпы (моб.): Движение/Поворот</p>
+        </div>
+    </div>
+    <!-- Важно указать type="module", т.к. используем ES6 модули -->
+    <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
