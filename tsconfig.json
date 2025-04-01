@@ -1,0 +1,16 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES6", // Целевая версия JS
+    "module": "ES6", // Система модулей
+    "outDir": "./public/dist", // Куда компилировать JS
+    "rootDir": "./src", // Корневая папка с TS кодом
+    "strict": true, // Включить строгие проверки типов
+    "esModuleInterop": true, // Улучшенная совместимость с модулями JS
+    "skipLibCheck": true, // Пропускать проверку типов в библиотеках
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node" // Как искать модули
+  },
+  "include": ["src/**/*"], // Какие файлы компилировать
+  "exclude": ["node_modules"] // Какие папки исключить
+}
