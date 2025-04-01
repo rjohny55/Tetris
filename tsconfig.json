@@ -10,6 +10,7 @@
     "skipLibCheck": true, // Пропускать проверку типов в библиотеках
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node" // Как искать модули
+    "lib": ["ES2016", "DOM", "DOM.Iterable"] // ES2016 добавит .includes, DOM нужен для браузера
   },
   "include": ["src/**/*"], // Какие файлы компилировать
   "exclude": ["node_modules"] // Какие папки исключить
