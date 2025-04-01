@@ -1,6 +1,6 @@
 // src/input.ts
 import { Game } from './game.js';
-import { SWIPE_THRESHOLD, TAP_THRESHOLD_DIST, TAP_THRESHOLD_TIME } from './constants';
+import { SWIPE_THRESHOLD, TAP_THRESHOLD_DIST, TAP_THRESHOLD_TIME } from './constants.js';
 
 export function setupInput(game: Game, canvas: HTMLCanvasElement) {
     let touchStartX = 0;
